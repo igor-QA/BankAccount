@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AlfaBankTest {
+    int count = 5;
 
     @BeforeAll
     static void setup() {
@@ -24,7 +25,7 @@ public class AlfaBankTest {
         $$(byText("Архивные счета и депозиты")).find(visible).click();
         $("body").shouldHave(text("Архивные счета и депозиты"));
         $$(byText("Депозиты")).find(visible).click();
-        $("#filter").findAll("[data-widget-name=CatalogCard]").shouldHaveSize(5);
+        $("#filter").findAll("[data-widget-name=CatalogCard]").shouldHaveSize(count);
 
 
     }
