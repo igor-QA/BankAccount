@@ -31,8 +31,8 @@ public class AlfaBankTests {
         open("https://alfabank.ru");
         $(byText("Вклады")).click();
         $("[data-widget-name='Heading']").shouldHave(text("Накопительные продукты"));
-        $("[data-test-id='tabs-list']").sibling(0).click();
-        $("[data-widget-name='BlockV2']").sibling(2).shouldBe(visible);
+        $("[data-test-id=tabs-list-tabTitle-0]").sibling(0).click();
+        // $$(byText("Страхование вкладов")).find(visible).click(); Этот варинт проще, что на шаге 34 по феншую как нужно в задании
+        $("[data-test-id='accordion-item-0']").shouldBe(text("Альфа-Банк является участником системы обязательного страхования вкладов"));
     }
-
 }
